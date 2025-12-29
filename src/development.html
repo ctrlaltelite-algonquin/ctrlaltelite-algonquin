@@ -1,0 +1,28 @@
+---
+title: Development
+description: Development blog
+layout: page.html
+permalink: /development/
+---
+
+
+
+<div class="default-layout">
+  <ul class="post-list unstyled-list">
+    {%- for post in collections.post reversed -%}
+    <li>
+      <div class="content-block">
+          <h2>
+            <span class="post-link" href="{{ post.url | url }}">{{ post.data.title | escape }}</span>
+          </h2>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <div class="post-meta">{{ post.data.date | date: date_format }}</div>
+          
+          <div class="post-description">{{ post.data.description }}</div> 
+
+          <a class="round-button" type="button" href="{{ post.url | url }}">Read more</a>
+      </div>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

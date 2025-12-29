@@ -1,0 +1,28 @@
+{
+  "name": "ctrlaltelite.io",
+  "version": "0.0.0",
+  "description": "Capstone website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx @11ty/eleventy --serve --input=src --output=dist --formats=html,md,njk,gif,png,jpg,webp,mp4,css,js",
+    "build": "npx @11ty/eleventy --input=src --output=dist --formats=html,md,njk,gif,png,jpg,webp,mp4,css,js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamourYouKnow/ctrlaltelite.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamourYouKnow/ctrlaltelite.io/issues"
+  },
+  "homepage": "https://github.com/DamourYouKnow/ctrlaltelite.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.12.2",
+    "swup": "^4.8.1"
+  }
+}

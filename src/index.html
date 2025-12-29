@@ -1,0 +1,80 @@
+---
+title: CtrlAltElite
+description: Algonquin College Simulations Lab Capstone Team
+layout: page.html
+---
+
+
+
+<div class="centered-layout">
+
+    <section>
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="./intro.mp4" type="video/mp4">
+        </video>
+        <p style="opacity: 0.8; text-align: center;">Explore the cosmic horrors of a robot trapped aboard a spaceship.</p>
+        <h1main class="title-block">PROJECT ZEUS</h1main>
+
+        <button class="cool-button" style="margin-left: 2em;" onclick="window.location.href='https://ctrlaltelite.io/fileshare/Project%20Zeus.zip'">Download</button>
+    </section>
+
+    <section-sub-section class="level-up-event">
+        <h2main>Level up event</h2main>
+        <timer-text id="demo"></timer-text>
+        <div class="content-container">
+            <div class="text-content">
+                <p>
+                    Join us for the Level Up Showcase on April 12, 2025, at 4:00 PM. Experience the latest in game development and innovation.
+                </p>
+                <p>
+                    CtrlAltElite is excited to announce our participation in the Level Up Showcase, where we will be showcasing our latest project, Project Zeus. This event is a fantastic opportunity for us to connect with fellow developers, industry professionals, and gaming enthusiasts.
+                </p>
+    
+                <button class="cool-button" onclick="window.location.href='https://levelupshowcase.com/'">Level Up Showcase</button>
+            </div>
+            <div class="image-content">
+                <img src="./assets/images/levelup.png" alt="Project Zeus Showcase">
+            </div>
+        </div>
+    </section-sub-section>
+    
+
+    
+
+    
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 12, 2025 16:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Event has begun!";
+  }
+}, 1000);
+</script>
+
+
+    
+</div>
+

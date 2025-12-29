@@ -1,0 +1,66 @@
+---
+layout: base
+---
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg" role="navigation">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-default" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <a class="header-button" href="{{ '/' | url }}">Home</a>
+          <a class="header-button" href="{{ '/about/' | url }}">About</a>
+          <a class="header-button" href="{{ '/development/' | url }}">Development</a>
+          <a class="header-button" href="{{ '/team/' | url }}">Team</a>
+          <a class="header-button" href="https://levelupshowcase.com/" target="_blank" rel="noopener noreferrer">Level up</a>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="swup" class="transition-fade">
+    {{ content }}
+
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; width: 100%; position: relative; bottom: 0;">
+      <p>&copy; 2025 CtrlAltElite. All rights reserved.</p>
+      <p>
+        <a href="https://www.instagram.com/ctrlaltelite.io?igsh=bXc0OWc4b2tsaWI1" target="_blank" rel="noopener noreferrer" style="color: #1DA1F2; text-decoration: none;">Instagram</a> |
+        <a href="https://levelupshowcase.com/" target="_blank" rel="noopener noreferrer" style="color: #1DA1F2; text-decoration: none;">Level up</a> |
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@ctrlaltelite.io" target="_blank" rel="noopener noreferrer" style="color: #1DA1F2; text-decoration: none;">Contact Us</a>
+      </p>
+    </footer>
+</main>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.header-button');
+
+    // Add click event listener to each button
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        buttons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        localStorage.setItem('activeButton', this.getAttribute('href'));
+      });
+    });
+
+    const currentPath = window.location.pathname.replace(/\/$/, "");
+
+    const activeButtonHref = localStorage.getItem('activeButton');
+    
+
+    buttons.forEach(button => {
+      const buttonPath = button.getAttribute('href').replace(/\/$/, ""); 
+
+      if (buttonPath === currentPath || buttonPath === activeButtonHref) {
+        button.classList.add('active');
+      }
+    });
+  });
+</script>
